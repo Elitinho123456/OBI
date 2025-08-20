@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>WebSocket Game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body id="body">
+    <ul id="messages"></ul>
+
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <form id="form">
+        <input id="inputNome" autocomplete="off" placeholder="Seu nome" />
+        <input id="input" autocomplete="off" placeholder="Digite uma mensagem..." />
+        <button>Send</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>
