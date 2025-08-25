@@ -1,20 +1,154 @@
 body {
-    position: relative;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #f0f0f0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#tela-conexao {
     background-color: #f0f0f0;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#tela-conexao h1 {
+    margin-top: 0px;
+}
+
+#tela-conexao input {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#tela-conexao button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#tela-conexao button:hover {
+    background-color: #0056b3;
+}
+
+#tela-jogo {
+    width: 95%;
+    max-width: 1400px;
+    height: 90vh;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+#info-jogo {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: #eee;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+#area-principal {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#placar {
+    flex-basis: 200px;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+#placar h3 {
+    margin-top: 0px;
+}
+
+#lista-jogadores {
+    list-style: none;
+    padding: 0px;
+}
+
+#lista-jogadores li{
+    margin-bottom: 5px;
+}
+
+#area-desenho {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
+    padding: 10px;
 }
 
-/* Estilizando o canvas para ter uma borda e se destacar */
-canvas {
+#losa {
     border: 2px solid #333;
+    cursor: crosshair;
     background-color: #fff;
+}
+
+#ferramentas {
     margin-top: 10px;
 }
 
-#form {
-    margin-top: 10px;
+#ferramentas * {
+    margin: 0 5px;
+}
+
+#chat {
+    flex-basis: 300px;
+    border-left: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+#mensagens {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: scroll;
+    background-color: #fdfdfd;
+}
+
+#mensagens p {
+    margin: 0 0 5px 0;
+    word-wrap: break-word;
+}
+
+#mensagens .sistema {
+    color: #007bff;
+    font-style: italic;
+}
+
+#mensagens .acerto{
+    color: #28a745;
+    font-weight: bold;
+}
+
+#input-chat {
+    border: none;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
 }

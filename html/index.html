@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="pt-br">
 
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>WebSocket Game</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Gargatic</title>
     <link rel="stylesheet" href="index.css">
+
 </head>
 
-<body id="body">
-    <ul id="messages"></ul>
+<body>
 
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
+<div id="tela-conexao">
 
-    <form id="form">
-        <input id="inputNome" autocomplete="off" placeholder="Seu nome" />
-        <input id="input" autocomplete="off" placeholder="Digite uma mensagem..." />
-        <button>Send</button>
-    </form>
+    <h1>Desenhe e Advinhe</h1>
+    <input type="text" placeholder="Seu Nome" id="nome-jogador ">
+    <input type="text" id="ip-servidor" placeholder="Ip Local ex(10.10.65.1)">
+    <button id="bnt-conectar">Conectar</button>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="./index.js" type="module"></script>
+</div>
+
+<div id="tela-jogo" class="hidden">
+
+    <div id="info-jogo">
+        <h2 id="status-rodada">Aguardando Jogadores...</h2>
+        <div id="palavra-area">Palavra: <span id="palavra"></span> </div>
+        <div id="timer">Tempo: <span id="tempo-restante">--</span></div>
+    </div>
+
+    <div id="area-principal">
+        <div id="placar">
+            <h3>Jogadores</h3>
+            <ul id="lista-jogadores"></ul>
+        </div>
+        <div id="area-desenho">
+            <canvas id="lousa" width="800" height="550"></canvas>
+            <div id="ferramentas">
+                <input type="color" id="color-pincel" value="#000000">
+                <input type="range" id="tamanho-pincel" min="2" max="50" value="5">
+                <button id="bnt-limpar">Limpar</button>
+            </div>
+        </div>
+
+        <div id="chat">
+            <div id="mensagens"></div>
+            <input type="text" id="input-chat" placeholder="Digite aqui seu palpite">
+        </div>
+    </div>
+
+</div>
+
+<script src="index.js"></script>
+
 </body>
 
 </html>
